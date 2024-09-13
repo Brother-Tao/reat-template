@@ -32,7 +32,7 @@ export default defineConfig({
   },
 
   server: {
-    host: 'localhost', // 指定监听的IP地址
+    host: '0.0.0.0', // 指定监听的IP地址
     port: 3333, // 指定服务器端口
     open: true, // 开发服务器启动时，自动在浏览器打开
     strictPort: false, // 若端口已被占用，就尝试下一个可用端口

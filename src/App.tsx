@@ -1,13 +1,8 @@
+import { routers } from '@/routers'
+
 function App() {
-  return (
-    <>
-      <div>
-        <Button type="primary" onClick={() => console.log('click')}>
-          Primary Button
-        </Button>
-      </div>
-    </>
-  )
+  const element = useRoutes(routers)
+  return <div className="App">{element}</div>
 }
 
 export default App
