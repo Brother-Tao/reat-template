@@ -1,7 +1,11 @@
 function App() {
   return (
     <>
-      <div>react</div>
+      <div>
+        <Button type="primary" onClick={() => console.log('click')}>
+          Primary Button
+        </Button>
+      </div>
     </>
   )
 }

@@ -20,6 +20,7 @@
     "react-router-dom": "^6.26.2"
   },
   "devDependencies": {
+    "@bit-ocean/auto-import": "^0.0.48",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.9.0",

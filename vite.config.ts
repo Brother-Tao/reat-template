@@ -2,18 +2,27 @@ import { defineConfig } from 'vite'
 import path from 'path'
 import react from '@vitejs/plugin-react-swc'
 import AutoImport from 'unplugin-auto-import/vite'
+import { antdResolver } from '@bit-ocean/auto-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
     AutoImport({
-      eslintrc: {
-        enabled: true,
-        filepath: './config/.eslintrc-auto-import.json' //此文件为重新启动项目生成的文件
-      },
+      imports: ['react-router-dom', 'react'],
+      resolvers: [antdResolver()],
       dts: './config/auto-imports.d.ts', //此文件配置保存后系统自动生成
-      imports: ['react', 'react-router'] //此处可填写需要自动引入的库
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.md$/ // .md
+      ],
+      eslintrc: {
+        // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
+        enabled: true,
+        // 生成文件地址和名称
+        filepath: './config/.eslintrc-auto-import.json', //此文件为重新启动项目生成的文件
+        globalsPropValue: true
+      }
     })
   ],
   resolve: {
