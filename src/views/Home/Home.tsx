@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const Home: FC<IProps> = () => {
-  return <div>我是home页</div>
+  return <div className="bg-slate-500 size-11">我是home页</div>
 }
 
 export default memo(Home)
