@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from '@/stores'
 import App from './App.tsx'
 import '@/assets/css/index.css'
+import 'virtual:svg-icons-register'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
